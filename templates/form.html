@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Learning Academy Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Deep Learning Academy Registration</h1>
+
+    <form action="/submit" method="POST">
+        <!-- Parent/Guardian Information -->
+        <fieldset>
+            <legend>Parent/Guardian Information</legend>
+
+            <label for="parent_name">Full Name:</label>
+            <input type="text" name="parent_name" id="parent_name" required>
+
+            <label for="parent_email">Email:</label>
+            <input type="email" name="parent_email" id="parent_email" required>
+
+            <label for="parent_number">Phone Number:</label>
+            <input type="tel" name="parent_number" id="parent_number" required>
+        </fieldset>
+
+        <!-- Emergency Contact -->
+        <fieldset>
+            <legend>Emergency Contact</legend>
+
+            <label for="emergency_email">Emergency Contact Email:</label>
+            <input type="email" name="emergency_email" id="emergency_email" required>
+
+            <label for="secondary_contact_name">Secondary Contact Name:</label>
+            <input type="text" name="secondary_contact_name" id="secondary_contact_name" required>
+
+            <label for="secondary_contact_relation">Relation to Student:</label>
+            <input type="text" name="secondary_contact_relation" id="secondary_contact_relation" required>
+        </fieldset>
+
+        <!-- Student Information -->
+        <fieldset>
+            <legend>Student Information</legend>
+
+            <label for="student_name">Student Name:</label>
+            <input type="text" name="student_name" id="student_name" required>
+
+            <label for="student_age">Student Age:</label>
+            <input type="number" name="student_age" id="student_age" required>
+
+            <label for="student_grade">Grade Level:</label>
+            <input type="text" name="student_grade" id="student_grade" required>
+
+            <label for="allergies">Allergies or Dietary Restrictions:</label>
+            <textarea name="allergies" id="allergies" rows="2" placeholder="Leave blank if none"></textarea>
+
+            <label for="accommodations">Other Accommodations Needed:</label>
+            <textarea name="accommodations" id="accommodations" rows="2"
+                placeholder="e.g. seating, accessibility, etc."></textarea>
+
+            <label for="laptop_access">Does the student have a laptop they can bring?</label>
+            <select name="laptop_access" id="laptop_access" required>
+                <option value="">-- Select an option --</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </fieldset>
+
+        <!-- Camp Availability -->
+        <fieldset>
+            <legend>Camp Availability</legend>
+
+            <p>Select all weeks your child is available to attend:</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="camp_weeks" value="Week of June 9th"> Week of June 9th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of June 16th"> Week of June 16th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of June 23rd"> Week of June 23rd</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of June 30th"> Week of June 30th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of July 7th"> Week of July 7th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of July 14th"> Week of July 14th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of July 21st"> Week of July 21st</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of July 28th"> Week of July 28th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Week of August 4th"> Week of August
+                    4th</label><br>
+                <label><input type="checkbox" name="camp_weeks" value="Other"> Other</label>
+            </div>
+        </fieldset>
+
+        <!-- Interview Availability -->
+        <fieldset>
+            <legend>Interview Availability</legend>
+
+            <label for="interview_availability">Please provide your availability for an interview with both the
+                parent/guardian and the student:</label>
+            <textarea name="interview_availability" id="interview_availability" rows="4" required placeholder="Format: Day-Date: Times
+Example:
+Monday-6/2: 9am-11am, 1pm-5pm
+Wednesday-6/4: 1pm-3pm"></textarea>
+        </fieldset>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="submit" value="Submit Registration">
+        </div>
+    </form>
+</body>
+
+</html>
